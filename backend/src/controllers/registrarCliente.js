@@ -6,9 +6,6 @@ import bcryptjs from "bcryptjs";
 import modelCliente from "../models/cliente.js";
 
 import { config } from "../../config.js";
-import { register } from "module";
-import { text } from "stream/consumers";
-import { info } from "console";
 
 const registerControllerCliente = {};
 
