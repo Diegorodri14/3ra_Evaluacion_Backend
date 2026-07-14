@@ -3,7 +3,7 @@ import crypto from "crypto";
 import jsonwebtoken from "jsonwebtoken";
 import bcryptjs from "bcryptjs";
 
-import modelAdmin from "../models/Admin.js";
+import modelAdmin from "../models/admin.js";
 
 import { config } from "../../config.js";
 import { register } from "module";

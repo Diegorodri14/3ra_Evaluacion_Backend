@@ -1,4 +1,3 @@
-import { deleteModel } from "mongoose";
 import boletosModel from "../models/boletos.js";
 
 const boletosController = {};

@@ -3,7 +3,7 @@ import jsonwebtoken from "jsonwebtoken";
 
 import { config } from "../../config.js";
 
-import adminModel from "../models/Admin.js";
+import adminModel from "../models/admin.js";
 
 const loginAdminController = {};
 
