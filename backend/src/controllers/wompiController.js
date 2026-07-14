@@ -8,7 +8,7 @@ wompiController.generarToken = async (req, res) => {
     const response = await fetch("https://id.wompi.sv/connect/token", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-ulencoded",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
         grant_type: config.wompi.grant_type,
