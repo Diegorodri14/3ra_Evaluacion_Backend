@@ -33,7 +33,7 @@ wompiController.generarToken = async (req, res) => {
 
 wompiController.paymentTest = async (req, res) => {
   try {
-    const { token, fromData } = req.body;
+    const { token, formData } = req.body;
 
     const response =
       await fetch ("https://api.wompi.sv/TransaccionCompra/TokenizadaSin3DS",
@@ -43,7 +43,7 @@ wompiController.paymentTest = async (req, res) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(fromData),
+        body: JSON.stringify(formData),
       });
 
     if (!response) {
