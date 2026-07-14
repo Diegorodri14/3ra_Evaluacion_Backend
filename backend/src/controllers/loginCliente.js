@@ -51,7 +51,7 @@ loginClienteController.login = async (req, res) => {
 
     return res.status(200).json({ message: "Login Exitoso" });
   } catch (error) {
-    console.log(error + "error");
+    console.log(error + " error");
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
