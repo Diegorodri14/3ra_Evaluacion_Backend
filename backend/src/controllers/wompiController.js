@@ -1,6 +1,5 @@
 import fetch from "node-fetch";
 import { config } from "../../config.js";
-
 const wompiController = {};
 
 wompiController.generarToken = async (req, res) => {
@@ -14,9 +13,9 @@ wompiController.generarToken = async (req, res) => {
         grant_type: config.wompi.grant_type,
         audience: config.wompi.audience,
         client_id: config.wompi.client_id,
-        client_secret: config.wompi.client_secret,
-      }),
-    });
+        client_secret: config.wompi.client_secret
+      })
+    })
 
     if (!response) {
       const error = await response.text();
@@ -26,6 +25,7 @@ wompiController.generarToken = async (req, res) => {
     const data = await response.json();
     return res.status(200).json(data);
   } catch (error) {
+    console.log(config.wompi)
     console.log(error + " error");
     return res.status(500).json({ message: "Internal Server Error" });
   }
@@ -33,15 +33,15 @@ wompiController.generarToken = async (req, res) => {
 
 wompiController.paymentTest = async (req, res) => {
   try {
-    const { token, formData: fromData } = req.body;
+    const { token, fromData } = req.body;
 
     const response =
-      await ("https://api.wompi.sv/TransaccionCompra/TokenizadaSin3Ds",
+      await fetch ("https://api.wompi.sv/TransaccionCompra/TokenizadaSin3DS",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Autorization: `Bearer, ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(fromData),
       });
