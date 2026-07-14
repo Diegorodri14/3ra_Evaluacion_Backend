@@ -8,7 +8,7 @@ router.route("/")
 .get(validateAuthCookie(["cliente"]), boletosController.obtenerBoletos)
 .post(validateAuthCookie(["admin"]), boletosController.agregarBoleto);
 
-router.route("/")
+router.route("/:id")
 .put(validateAuthCookie(["admin",]), boletosController.actualizarBoleto)
 .delete(validateAuthCookie(["admin"]), boletosController.eliminarBoleto);
 

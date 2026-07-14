@@ -7,13 +7,13 @@ export const validateAuthCookie = (allowedTypes = []) => {
         
         const {authCookie} = req.cookies;
 
-        if(!AuthCookie){
+        if(!authCookie){
             return res.status(403).json({message : "El token no fue encontrado, no tienes autorizacion"})
         }
 
         const decoded = jsonwebtoken.verify(authCookie, config.JWT.secret)
 
-        if(!allowedTypes.includes(decoded.userTypes)){
+        if(!allowedTypes.includes(decoded.userType)){
             return res.status(401).json({message : "Acceso denegado"});
         }
         next()

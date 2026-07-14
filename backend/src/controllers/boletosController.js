@@ -69,7 +69,7 @@ boletosController.actualizarBoleto = async (req, res) => {
 //ELIMINAR
 boletosController.eliminarBoleto = async (req, res) => {
   try {
-    const boletoEliminado = boletosModel.findByIdAndDelete(req, params, id);
+    const boletoEliminado = boletosModel.findByIdAndDelete(req.params.id);
 
     if (!boletoEliminado) {
       return res.status(404).json({ message: "El boleto no fue encontrado" });

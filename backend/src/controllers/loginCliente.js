@@ -42,7 +42,7 @@ loginClienteController.login = async (req, res) => {
     clienteEncontrado.timeOut = null;
 
     const token = jsonwebtoken.sign(
-      { id: clienteEncontrado.id, useType: "cliente" },
+      { id: clienteEncontrado.id, userType: "cliente" },
       config.JWT.secret,
       { expiresIn: "30d" },
     );

@@ -42,7 +42,7 @@ loginAdminController.login = async (req, res) => {
     adminEncontrado.timeOut = null;
 
     const token = jsonwebtoken.sign(
-      { id: adminEncontrado.id, useType: "administrador" },
+      { id: adminEncontrado.id, userType: "admin" },
       config.JWT.secret,
       { expiresIn: "30d" },
     );
