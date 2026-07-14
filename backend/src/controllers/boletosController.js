@@ -80,7 +80,7 @@ boletosController.eliminarBoleto = async (req, res) => {
       .json({ message: "El boleto se ha eliminado correctamente" });
   } catch (error) {
     console.log(error + "error");
-    return res.status(500).json({ message: "Internal Server Error" });
+    return res.status(500).json({ message: " Internal Server Error" });
   }
 };
 
