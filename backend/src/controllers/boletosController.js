@@ -1,4 +1,4 @@
-import boletosModel from "../models/boletos.js";
+import boletosModel from "../models/Boletos.js";
 
 const boletosController = {};
 
